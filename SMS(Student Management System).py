@@ -1,18 +1,14 @@
 class Student:
-    """Represents an individual student record."""
 
     def __init__(self, roll_no: str, name: str, course: str, marks: float):
         self.roll_no = roll_no
         self.name = name
         self.course = course
         self.marks = marks
-
-
+    
 class StudentManagementSystem:
-    """Manages student records entirely in memory using a dictionary."""
 
     def __init__(self):
-        # Dictionary structure: {roll_no: Student object}
         self.students = {}
 
     def add_student(self, roll_no: str, name: str, course: str, marks: float) -> bool:
@@ -121,9 +117,6 @@ class StudentManagementSystem:
         print(f"Highest Score    : {topper.marks:.2f} ({topper.name})")
         print("=" * 35)
 
-
-# --- Input Helpers ---
-
 def prompt_non_empty(message: str) -> str:
     while True:
         value = input(message).strip()
@@ -143,13 +136,8 @@ def prompt_marks(message: str) -> float:
         except ValueError:
             print("[Error] Invalid input. Please enter a valid number.")
 
-
-# --- Main Menu Loop ---
-
 def main():
     sms = StudentManagementSystem()
-
-    # Pre-loading sample data so you can test immediately
     sms.add_student("101", "Amit Shukla", "B.s.c", 84.5)
     sms.add_student("102", "Kaushal Dubey", "BCA", 80.0)
     sms.add_student("103", "Mayank Mishra", "B.Tech", 92.0)
