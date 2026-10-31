@@ -25,12 +25,12 @@ class StudentManagementSystem:
             print("\n[Info] No student records available.")
             return
 
-        print("\n" + "=" * 65)
+        #print("\n" + "=" * 65)
         print(f"{'Roll No':<12} | {'Name':<22} | {'Course':<15} | {'Marks':<6}")
-        print("-" * 65)
+       # print("-" * 65)
         for roll_no, s in sorted(self.students.items(), key=lambda item: item[0]):
             print(f"{roll_no:<12} | {s.name:<22} | {s.course:<15} | {s.marks:<6.2f}")
-        print("=" * 65)
+        #print("=" * 65)
         print(f"Total Students: {len(self.students)}")
 
     def search_student(self, query: str) -> None:
@@ -46,10 +46,10 @@ class StudentManagementSystem:
 
         print("\n--- Search Results ---")
         print(f"{'Roll No':<12} | {'Name':<22} | {'Course':<15} | {'Marks':<6}")
-        print("-" * 65)
+       # print("-" * 65)
         for s in matches:
             print(f"{s.roll_no:<12} | {s.name:<22} | {s.course:<15} | {s.marks:<6.2f}")
-        print("-" * 65)
+       # print("-" * 65)
 
     def update_student(self, roll_no: str) -> bool:
         student = self.students.get(roll_no)
@@ -109,13 +109,13 @@ class StudentManagementSystem:
         avg_marks = sum(all_marks) / len(all_marks)
         topper = max(self.students.values(), key=lambda s: s.marks)
 
-        print("\n" + "=" * 35)
+        #print("\n" + "=" * 35)
         print("       PERFORMANCE METRICS       ")
-        print("=" * 35)
+       # print("=" * 35)
         print(f"Total Registered : {len(self.students)}")
         print(f"Class Average    : {avg_marks:.2f}")
         print(f"Highest Score    : {topper.marks:.2f} ({topper.name})")
-        print("=" * 35)
+       # print("=" * 35)
 
 def prompt_non_empty(message: str) -> str:
     while True:
@@ -153,7 +153,7 @@ def main():
         print("5. Delete Student Record")
         print("6. View Performance Statistics")
         print("7. Exit")
-        print("-" * 35)
+        #print("-" * 35)
 
         choice = input("Enter your selection (1-7): ").strip()
 
